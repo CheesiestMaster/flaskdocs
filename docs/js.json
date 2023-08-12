@@ -1,0 +1,39 @@
+{
+    "title": "JSON section",
+    "content": ["JSON section content"],
+    "subsections": [
+        {
+            "title": "JSON sub-section",
+            "content": ["JSON sub-section content"]
+        
+        },
+        {
+            "title": "JSON sub-section 2",
+            "content": ["JSON sub-section 2 content"],
+            "subsections": [
+                {
+                    "title": "JSON sub-sub-section",
+                    "content": ["JSON sub-sub-section content"],
+                    "subsections": [
+                        {
+                            "title": "JSON sub-sub-sub-section",
+                            "content": ["JSON sub-sub-sub-section content"],
+                            "subsections": [
+                                {
+                                    "title": "JSON sub-sub-sub-sub-section",
+                                    "content": ["JSON sub-sub-sub-sub-section content"],
+                                    "subsections": [
+                                        {
+                                            "title": "JSON sub-sub-sub-sub-sub-section",
+                                            "content": ["JSON sub-sub-sub-sub-sub-section content"]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
