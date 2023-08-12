@@ -2,7 +2,7 @@ from flask import Flask, templating
 import docs.config as config
 import markdown
 import os
-import json as json_module
+from json_parser import json_to_html
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
@@ -12,37 +12,6 @@ def md_to_html(md):
     md = md.replace('\n', '  \n')
     # convert to html preserving tables
     html = markdown.markdown(md, extensions=['tables', 'fenced_code'])
-    return html
-
-def json_to_html(json, depth=0):
-    """
-    convert json to html
-    json is a list of dicts, each dict is a section
-    json starts off with a page title and a subsections list
-    {
-        "title": "Section Title",
-        "content": ["Section Content"],
-        "subsections": [
-            {
-                "title": "Subsection Title",
-                "content": ["Subsection Content"],
-                "subsections": []
-    }
-    recursively convert each section to html
-    use depth to determine the heading level
-    """
-    print(depth)
-    if depth == 0:
-        json = json_module.loads(json)
-    if type(json) == dict:
-        json = [json]
-    html = ""
-    for section in json:
-        html += f"<h{depth+1}>{section['title']}</h{depth+1}>"
-        for content in section['content']:
-            html += f"<p>{content}</p>"
-        if "subsections" in section and section['subsections']:
-            html += json_to_html(section['subsections'], depth=depth+1)
     return html
     
 
